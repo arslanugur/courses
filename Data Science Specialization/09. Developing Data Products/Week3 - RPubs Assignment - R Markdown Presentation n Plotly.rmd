@@ -1,0 +1,64 @@
+#Introduction
+#In this assignment, it was asked to create a web page presentation using R Markdown that features a plot created with Plotly. 
+#we will Host a webpage on either GitHub Pages, RPubs, or NeoCities. 
+#The webpage must contain the date that we created the document, and it must contain a plot created with Plotly.
+
+knitr::opts_chunk$set(echo = TRUE)
+
+#Data Processing
+library(datasets)
+library(plotly)
+
+## Warning: package 'plotly' was built under R version 4.0.4
+## Loading required package: ggplot2
+## Warning in as.POSIXlt.POSIXct(Sys.time()): unable to identify current timezone 'H':
+## please set environment variable 'TZ'
+## Attaching package: 'plotly'
+## The following object is masked from 'package:ggplot2':
+##     last_plot
+## The following object is masked from 'package:stats':
+##     filter
+## The following object is masked from 'package:graphics':
+##     layout
+
+data("mtcars")
+head(mtcars)
+
+##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+
+
+plot_ly(data = mtcars, x = ~mpg, y = ~disp, type = "scatter", mode = "markers", marker = list(size = 15, color = "gold")) %>% 
+  layout(title = "MPG VS Displacement", xaxis = list(title = "MPG"), 
+         yaxis = list(title = "Displacement"))
+         
+        
+        
+library(viridis)
+## Warning: package 'viridis' was built under R version 4.0.4
+## Loading required package: viridisLite
+
+plot_ly(data = mtcars, x = ~mpg, y = ~disp, type = "scatter", mode = "markers", marker = list(size = ~gear, colorbar = list(title = "Number of cylinders"), color = ~cyl, colorscale='Viridis', reversescale =T)) %>% 
+  layout(title = "MPG VS Displacement", xaxis = list(title = "MPG"), 
+         yaxis = list(title = "Displacement"))
+         
+        
+#drawing a 3d plot
+plot_ly(
+     data      = mtcars,
+     type      = "scatter3d",
+     mode      = "markers",
+     colors    = c("blue","red"),
+     text      = row.names(mtcars),
+     hoverinfo = "text",
+     color     = ~cyl,
+     x         = ~disp,
+     y         = ~hp,
+     z         = ~qsec
+)
+
