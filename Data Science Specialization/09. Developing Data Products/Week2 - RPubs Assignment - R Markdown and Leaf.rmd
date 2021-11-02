@@ -1,0 +1,12 @@
+#Leaflet
+#Plotting a map without any information
+
+library(leaflet)
+my_map = leaflet() %>% addTiles()
+my_map
+
+#Plotting India’s Gate on Map
+
+my_map = my_map %>% addMarkers(lat = 28.6129,lng = 77.2295,popup = "INDIA GATE")
+my_map
+
