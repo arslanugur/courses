@@ -12,4 +12,5 @@
 - 09. Sampling and Standard Error
 - 10. Experimental Data - Part I
 - 11. Experimental Data - Part II
-- 12. Machine Learning 
+- 12 - Machine Learning 
+- 13 - Statistical Fallacies
