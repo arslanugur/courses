@@ -1,0 +1,16 @@
+WEEk III
+Learning Objectives
+      Compute minimum spanning trees
+      Describe matchings in bipartite graphs
+      Define planar graphs
+
+Trees
+###
+
+Bipartite Graphs
+####
+
+
+Planar Graphs
+#####
+
