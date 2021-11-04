@@ -1,3 +1,5 @@
+# Discrete Mathematics for Computer Science: https://www.coursera.org/specializations/discrete-mathematics
+
 Course I - Mathematical Thinking in Computer Science 				
   Week 1 - Making Convincing Arguments 				
     Why Proofs? 				
