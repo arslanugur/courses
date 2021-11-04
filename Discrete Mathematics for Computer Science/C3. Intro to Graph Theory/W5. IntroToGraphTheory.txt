@@ -1,0 +1,24 @@
+WEEK V
+
+This week we'll develop an algorithm that finds the maximum amount of water which can be routed in a given water supply network. 
+This algorithm is also used in practice for optimization of road traffic and airline scheduling. 
+We'll see how flows in networks are related to matchings in bipartite graphs. 
+We'll then develop an algorithm which finds stable matchings in bipartite graphs. 
+This algorithm solves the problem of matching students with schools, doctors with hospitals, and organ donors with patients. 
+By the end of this week, we'll implement an algorithm which won the Nobel Prize in Economics!
+
+Learning Objectives
+      Define augmenting paths in networks
+      Compute maximim flows in graphs
+      Develop an algorithm for the stable matching problem
+      
+      
+Networks, Flows, and Cuts
+###
+
+Stable Matchings
+####
+
+
+The Project: Programming Gale-Shapley Algorithm
+##
