@@ -1,6 +1,6 @@
 # Discrete Mathematics for Computer Science: https://www.coursera.org/specializations/discrete-mathematics
 
-Course I - Mathematical Thinking in Computer Science 				
+Course I - Mathematical Thinking in Computer Science: https://www.coursera.org/learn/what-is-a-proof/home/welcome
   Week 1 - Making Convincing Arguments 				
     Why Proofs? 				
       - Proof by Example 				
@@ -55,7 +55,7 @@ Course I - Mathematical Thinking in Computer Science
       - 				
 
 
-Course II - Combinatories and Probability
+Course II - Combinatories and Probability: https://www.coursera.org/learn/combinatorics/home/welcome
   Week 1 - Basic Counting
     Starting Counting
     Rule of Sum
@@ -148,7 +148,7 @@ Course II - Combinatories and Probability
   Week 6 - Project: Dice Game
   
   
-Course III - Intro to Graph Theory
+Course III - Intro to Graph Theory: https://www.coursera.org/learn/graphs/home/welcome
   Week1 - What's a Graph?
     Warm-up
       Airlines Graph
@@ -256,7 +256,7 @@ Course III - Intro to Graph Theory
     The Project: Prog. Gale-Shapley Algorithm
       Gale-Shapley Algorithm
 
-Course IV - Number Theory and Cryptography
+Course IV - Number Theory and Cryptography: https://www.coursera.org/learn/number-theory-cryptography/home/welcome
 
-Course V - Delivery Problem
+Course V - Delivery Problem: https://www.coursera.org/learn/delivery-problem/home/welcome
 
