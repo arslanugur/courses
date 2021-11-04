@@ -1,0 +1,221 @@
+WEEK III
+Learning Objectives
+    Use standard combinatorial settings in counting problems
+    Categorize counting problems into standard combinatorial settings
+    Count number of objects via standard combinatorial settings
+    Combine several combinatorial settings to solve counting problems
+    
+Combinations with Repetitions
+# Salads
+"""
+We have an unlimited supply of tomatoes, bell peppers and lettuce. 
+We want to make a salad out of 4 units among these three ingredients (we do not have to use all ingredients). 
+The order in which we use the ingredients does not matter. 
+How many different salads we can make? 
+We do not have the formula to answer this question yet, 
+so try to list all the salads first or create a program that will do that for you. 
+Then you can count the number of salads by hand (note the answer to the problem should be the number).
+Ans: 15
+the code that lists all salads (T=tomato, B=bell pepper, L=lettuce) """
+from itertools import combinations_with_replacement
+Code:
+for c in combinations_with_replacement("TBL", 4):
+    print("".join(c))
+
+# Combinations with Repetitions
+Twenty people are voting for one of 5 candidates. 
+They have secret ballot, each voter votes for one of 5 candidates. 
+The result of an election is the number of votes for each of the candidate. 
+How many possible results can this vote have 
+(the result of the vote is determined by the number of votes for each candidate)?
+Ans: 10626
+Each vote picks one out of five candidates. 
+Since we have a secret ballot, votes are unordered. 
+There are repetitions, since each candidate can be voted for more than once. 
+Thus we are dealing with combinations of size 20 out of 5 options with repetitions. 
+So the answer to the problem is (20+(5−1) matrix 5−1) = (24 matrix 4).
+
+We have 9 identical candies and we want to distribute them between 3 different sections of our bag. 
+It does not matter which candies go to which section. 
+How many ways do we have to do it?
+Ans: 55
+With each candy we pick one of three sections. 
+Thus we have a selection of size 9 among 3 options. 
+Candies are identical, so the order does not matter. 
+We allow repetitions: several candies can go into the same section. 
+Thus we are dealing with combinations of size 7 out of 3 options with repetitions. 
+So the answer is a binomial coefficient with the parameters 9+(3-1) = 11 and 3-1 = 2
+
+
+Problems in Combinatorics
+# Distributing Assignments Among People
+Suppose there are 4 people and 9 different assignments. 
+Each person should receive one assignment. 
+Assignments for different people should be different. 
+How many ways are there to do it?
+Ans: 3024
+
+There are 4 people and 9 different assignments. 
+We need to distribute all assignments among people. 
+No assignment should be assigned to two people. 
+Every person can be given arbitrary number of assignments from 0 to 9. 
+How many ways are there to do it?
+Ans: 262144
+It is convenient to look from the position of assignments. 
+Each assignment has to receive a person who will work on it. 
+Each assignment has 4 options. 
+Assignments are different, so these are ordered selections. 
+Repetitions are allowed: two assignments can be given to the same person. 
+So we are dealing with tuples.
+
+# Distributing Candies Among Kids
+There are 15 identical candies. 
+How many ways are there to distribute them among 7 kids?
+Ans: 54264
+
+There are 15 identical candies. 
+How many ways are there to distribute them among 7 kids 
+in such a way that each kid receives at least 1 candy?
+Ans: 3003
+We can just give one candy to each kid. 
+This way we will satisfy the requirement (note that we have to give out these candies). 
+Now for the remaining candies we have exactly the same situation as in the previous problem. 
+With each of 8 remaining candies we pick one of the kids. 
+Order does not matter, repetitions are allowed. 
+Thus we have combinations of size 8 out of 7 options with repetitions.
+
+
+# Numbers with Fixed Sum of Digits
+How many non-negative integer numbers are there below 10000 
+such that their sum of digits is equal to 9?
+Ans: 220
+it is convenient to look from the point of view of digits in the number. 
+There are four digits in the number and we split the weight 9 among them. 
+We can start with all digits being equal to 0 and then add 1 to one of them nine times in a row. 
+So, each time we have to pick one of four digits. 
+These choices are unordered and the repetitions are allowed. 
+So we are dealing with combinations of size 9 out of 4 options 
+with repetitions and we have the formula for that.
+
+How many non-negative integer numbers are there below 10000 
+such that their sum of digits is equal to 10?
+Ans: 282
+We can start similarly to the previous problem. 
+There are four digits in the number and we split the weight 10 among them. 
+We can start with all digits being equal to 0 and then add 1 to one of them nine times in a row. 
+So, each time we have to pick one of four digits. 
+These choices are unordered and the repetitions are allowed. 
+So we are dealing with combinations of size 10 out of 4 options 
+with repetitions and we have the formula for that. This gives 286. 
+But note that we have also counted cases where we place weight 10 into one digit 
+and these cases do not correspond to 4-digit numbers. 
+There are four such cases and subtracting them 
+from our intermediate result we obtain the answer to the problem.
+
+# Numbers with Non-increasing Digits
+How many four-digit numbers are there such that their digits are non-increasing, 
+that is each next digit is not greater than the previous one?
+Three-digit numbers are also four-digit, they just start with 0.
+Ans: 715
+To fix such a number it is sufficient and enough to pick unordered subset of four numbers from 0 to 9. 
+Then they can be ordered into a non-increasing order in a unique way. 
+Since there might be equal digits in our number, repetitions are allowed. 
+Thus we are dealing with combinations of size 4 out of 10 options with repetitions.
+
+# Splitting into Working Groups
+There are 12 students in the class. 
+How many ways are there to split them 
+into working groups of size 2 to work on the same assignment?
+Ans: 10395
+
+
+# Problems in Combinatorics
+Alice has 7 different textbooks. 
+She would like to lend three books to Bob for a weekend. 
+How many ways does she have to do it?
+Ans: 35
+Alice has to pick 3 books out of 7 books she has. 
+The order does not matter and she cannot pick the same book twice. 
+So we have combinations of size 3 out of 7 objects. 
+There are 7x6x5/(3x2x1)=7x5=35 of them.
+
+
+Alice has 7 textbooks and Bob has 5 textbooks. 
+All textbooks are different. 
+They would like to exchange three books each between each other for a weekend. 
+That is, Alice gives Bob three of her books and Bob gives Alice three of his books. 
+How many ways do they have to do it?
+Ans: 350
+When each of them pick three books among their N books (N=7 for Alice and N=5 for Bob), 
+we are dealing with combinations: unordered selection without repetitions. 
+Thus Alice can pick three books in 7x6x5/(3x2x1)=7x5=35 ways 
+and Bob can pick three books in 5x4x3/(3x2x1)=10 ways. 
+Since we want both Alice and Bob to choose books, we are dealing with pairs of choices, 
+so we have to multiply variants for both people.
+
+
+Five married couples are planning a barbecue. 
+They need to pick three couples who will be responsible for bringing food. 
+How many ways do they have to do it?
+Ans: 10
+We pick three couples out of five without repetitions and order.
+These are combinations of size three out of five options.
+
+
+Five married couples are planning a barbecue. 
+They need to hold a meeting dedicated to the planning. 
+The meeting should consist of five people, one from each couple. 
+How many possible ways do they have to pick people for the meeting?
+Ans: 32
+Indeed, in each couple they have to pick one person. 
+There are two ways to do this. 
+Since this have to be repeated five times separately, 
+we have to apply the product rule and multiply 2 by itself five times. 
+Note, that we are dealing with tuples here: 
+we pick a sequence of length 5, 
+where each position in the sequence correspond to one of the couple, 
+and we have two options for each position, two members of the couple.
+
+Five married couples gathered for a barbecue. 
+They need to pick three people among them who will be responsible for preparing the table. 
+But they do not want to pick two people from the same couple for this (this would not be fair). 
+How many ways do they have to pick three people satisfying this requirement?
+Ans: 80
+Indeed, due to the restriction we have to pick three persons from different couples. 
+For this we first have to pick three couples, 
+from which we are going to choose people for our task. 
+And then we have to pick one person from each of the three couples. 
+We can make the first choice in 10 ways (compare with Question 3 of the test) 
+and then we can pick one person in each of the three couples. 
+We can do it in 8 ways (compare with Question 4 of this test). 
+Each pair of choices on two stages above result in a different pick of people to prepare the table. 
+So by the product rule in total we have 10 x 8 = 80 possibilities.
+
+
+In a 6 number lottery one is trying 
+to guess an unordered subset of 6 numbers among 44 numbers without repetitions. 
+For this one picks 6 numbers out of 44 himself. 
+How many ways are there to do this? You can use wolfram alpha to compute the exact number.
+Ans: 7059052
+We have to pick a subset of size 6 out of 44 options. 
+These are combinations and the answer is a binomial coefficient.
+
+
+In a 6 number lottery one is trying 
+to guess an unordered subset of 6 numbers among 44 numbers without repetitions. 
+After the lottery the organisers decided 
+to count how many possible ways are there to guess correctly exactly three numbers. 
+What is the answer to this question? 
+You can use wolfram alpha to compute the exact number.
+Ans: 168720
+Since the lottery has already happened, the set of winning numbers is fixed. 
+So to guess exactly three winning numbers one has to pick three numbers among 6 winning numbers 
+and pick 3 other numbers among remaining 44-6=38 numbers. 
+Choices for both cases can be computed as binomial coefficients 
+and then we have to multiply the results by the product rule.
+
+Also note that if we divide this number by the answer to the previous problem we get approximately 0.024. 
+As we will discuss next week this is the probability to guess exactly three numbers correctly, 
+that is the chances are 2.4%.
+
+
