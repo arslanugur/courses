@@ -1,0 +1,15 @@
+WEEK II
+Learning Objectives
+      Decide whether a graph has an Eulerian cycle
+      Apply the degree sum formula
+      Determine connected components of a graph
+
+Handshaking Lemma
+###
+
+Connected Components
+####
+
+
+Eulerian and Hamiltonian Cycles
+#####
