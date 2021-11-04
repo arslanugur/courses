@@ -1,0 +1,21 @@
+WEEK IV
+Learning Objectives
+      Prove that planar graphs can be colored in 6 colors
+      Analyze Ramsey numbers
+      Review cliques, independent sets, and vertex covers
+      
+      
+ Graph Coloring
+ ####
+ 
+ 
+ Cliques and Independent Sets
+ #####
+ 
+ Ramsey Numbers
+ #####
+ 
+ Vertex Cover
+ ####
+ 
+ 
