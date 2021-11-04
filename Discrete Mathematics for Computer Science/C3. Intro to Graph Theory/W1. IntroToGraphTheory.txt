@@ -1,0 +1,104 @@
+WEEK I
+Learning Objectives
+    Define graphs
+    Practice graph drawing
+    Identify graph classes
+  
+WARM UP
+# Puzzle: Guarini's Puzzle
+
+
+# Puzzle: Bridges of Königsberg
+You are in the 18th century Königsberg, Prussia and your goal is to find
+a walk through the city that crosses each of 7 bridges exactly once. 
+First, select an island to start your walk followed by selecting bridges in a one-by-one fashion.
+Ans: None/Impossible
+  
+Now, transporting ourselves to today, 
+where Königsberg is Kaliningrad in Russia, whose map is shown below. 
+Some bridges have been destroyed and some new ones have been built. 
+Let us indulge in the same activity.
+Is  it possible to plan such a walk in today's Kaliningrad? 
+Ans: B --> D --> C --> A --> B 
+                             B --> C
+                                   C --> D
+
+Why Graphs?
+# Drawing Graphs.ipynb
+
+Basic Definitions
+# Definitions
+Is this graph connected?
+Ans: No
+this graph is not connected. For example, there is no path between v1 and v3
+
+How many connected components does this graph have?
+Ans: 2
+this graph has two connected components: {v1,v2,v5,v6,v7,v8} and {v3,v4}
+
+Is there a path from v1 to v6?
+Ans: Yes
+there are several paths from v1v_1v1​ to v6v_6v6​. One of them is (v1,v5,v6)
+
+What is the distance (the weight of the shortest path) from v1 to v6?
+Ans: 2+1+1+4 = 8 --> the shortest path is (v1, v7, v8, v5, v6).
+     7+4 = 11    --> longer path is (v1, v6, v6) 
+
+Are these graphs complement?
+Ans: Yes
+Two vertices on the left are connected if and only if they aren't connected on the right.
+
+Basic Graphs
+# Puzzle: Make a Tree
+Remove the minimum number of edges from the graph such 
+that every pair of vertices is connected by exactly one simple path.
+Ans: 6 --> 4 --> 5 --> 1 --> 2 --> 3
+
+Remove the minimum number of edges from the graph such 
+that every pair of vertices is connected by exactly one simple path.
+Ans: 3 --> 2 --> 7
+     3 --> 2 --> 1
+     3 --> 6 
+     3 --> 4 --> 5
+
+Remove the minimum number of edges from the graph such 
+that every pair of vertices is connected by exactly one simple path.
+Ans: 3 --> 2 --> 1 --> 4 --> 5
+
+# Graph Types
+Is this a complete graph?
+v2-------------v3
+ |           /  |
+ |        /     |
+ |     /        |
+ |  /           |
+v1-------------v4
+Ans: No
+there is no edge between v2 and v4, thus, this graph is not complete.
+
+
+Is this a tree?
+v1 ----  v2 -- v3 -- v4 -- v5
+          |                |
+           ----------------
+Ans: No
+this graph contains a cycle (v1, v2, v3, v4, v5, v1), so it's not a tree.
+
+The Graph is complete and cycle
+v1--------v2
+ |---v3---|
+Complete: there is an edge between every pair of vertices.
+Cycle: this is the cycle on three vertices.
+
+
+The Graph is bipartite
+   v2
+  /
+v1----v3
+  \
+   v4
+Bipartite - one part of this graph contains only the central vertex, while the other part contains all the remaining vertices. 
+            Every edge connects two vertices from different parts.
+           
+           
+           
